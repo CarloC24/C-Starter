@@ -26,7 +26,20 @@ int string_length(char *s)
 */
 char *reverse_string(char *rv, char *s)
 {
-    
+    int start, count, end;
+    count = 0;
+    while (s[count] != '\0')
+    {
+        count++;
+    }
+    end = count - 1;
+    for (start = 0; start < count; start++)
+    {
+        rv[start] = s[end];
+        end--;
+    }
+    rv[start] = '\0';
+    return rv;
 }
 
 #ifndef TESTING
