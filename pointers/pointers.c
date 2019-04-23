@@ -35,6 +35,12 @@ void string_copy(char *x, char *y)
 */
 char *find_char(char *str, int c)
 {
+    char *the_pointer = NULL;
+    if (str[c])
+    {
+        the_pointer = &str[c];
+    }
+    return the_pointer;
 }
 
 /*
@@ -47,12 +53,6 @@ char *find_char(char *str, int c)
 */
 char *find_string(char *haystack, char *needle)
 {
-    char *the_pointer = NULL;
-    if (str[c])
-    {
-        the_pointer = &str[c];
-    }
-    return the_pointer;
 }
 
 #ifndef TESTING
