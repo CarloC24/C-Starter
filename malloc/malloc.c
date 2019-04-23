@@ -27,6 +27,17 @@ char *string_dup(char *src)
 */
 void mem_copy(void *dest, const void *src, int n)
 {
+    char *src_copy = (char *)src;
+    char *dest_copy = (char *)dest;
+
+    for (int i = 0; i < n; i++)
+    {
+        dest_copy[i] = src_copy[i];
+    }
+    if (*dest_copy == *src_copy)
+    {
+        printf("truee");
+    }
 }
 
 /*
@@ -42,6 +53,15 @@ void mem_copy(void *dest, const void *src, int n)
 */
 void *resize_memory(void *ptr, int old_size, int new_size)
 {
+    char *new_mem = malloc(new_size);
+    if (old_size < new_size)
+    {
+        mem_copy(new_mem, ptr, old_size);
+    }
+    else
+    {
+        mem_copy(new_mem, ptr, new_size);
+    }
 }
 
 #ifndef TESTING
